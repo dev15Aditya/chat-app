@@ -1,38 +1,189 @@
+body {
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  max-width: 728px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App header {
+  height: 10vh;
+  min-height: 50px;
+  color: black;
+  position: fixed;
+  width: 100%;
+  max-width: 728px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the header */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App section {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  background-color: white; /* Set the background to white */
+  color: black; /* Set text color to black */
+}
+
+main {
+  padding: 10px;
+  height: 80vh;
+  margin: 10vh 0 10vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* main::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  main::-webkit-scrollbar-track {
+    background: #1e1e24;
+  } */
+
+/* main::-webkit-scrollbar-thumb {
+    background: #6649b8;
+  } */
+
+form {
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  max-width: 728px;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+form button {
+  width: 20%;
+  background-color: rgb(56, 56, 143);
+}
+
+input {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.5rem;
+  color: black; /* Set input text color to black */
+  outline: none;
+  border: none;
+  padding: 0 10px;
+}
+
+button {
+  background-color: #282c34; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sign-in {
+  color: #282c34;
+  background: white;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+ul,
+li {
+  text-align: left;
+  list-style: none;
+}
+
+p {
+  max-width: 500px;
+  margin-bottom: 12px;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: black; /* Set text color to black */
+  text-align: center;
+  /* background-color: #0b93f6; */
+  align-self: flex-start; /* Left-align sent messages */
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.sent {
+  flex-direction: row-reverse;
+  align-self: flex-end;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.received p {
+  background: #e5e5ea;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
+}
+
+/* Styling for the Kanban Task Board */
+.task-container {
+  background-color: white;
+  color: black; /* Set the text color to black */
+  flex: 1;
+  max-width: 50%;
+  overflow-y: auto;
+}
+
+.task-board {
+  display: flex;
+  justify-content: space-around;
+}
+
+.column {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #0b93f6;
+  border-radius: 5px;
+}
+
+.column h2 {
+  color: white;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  main {
+    height: 70vh;
+    margin: 10vh 0 10vh;
   }
 }
